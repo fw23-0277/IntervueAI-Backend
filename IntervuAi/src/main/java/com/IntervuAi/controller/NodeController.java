@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.IntervuAi.DTO.Answer;
-import com.IntervuAi.Service.IntervuService;
+import com.IntervuAi.Service.IntervuServiceImpl;
 
 @RestController
 @RequestMapping("/bot")
@@ -19,7 +19,7 @@ import com.IntervuAi.Service.IntervuService;
 public class NodeController {
 
     @Autowired
-    private IntervuService intervuService;
+    private IntervuServiceImpl intervuService;
 
     String prompt = "I want you to act as an interviewer. I will be the candidate and you will ask me the interview questions for the position of Node.js Developer. "
             + "That will require me to have the following content: JavaScript, Node.js, Express.js, async/await, RESTful APIs, NPM, callbacks, and Promises. "
@@ -32,11 +32,11 @@ public class NodeController {
         return new ResponseEntity<>(resp, HttpStatus.OK);
     }
 
-    @PostMapping("/node/answer")
-    public ResponseEntity<String> postAnswer(@RequestBody Answer answer) {
-        intervuService.storeFeedback(answer);
-        return new ResponseEntity<>("Answer received and feedback stored", HttpStatus.OK);
-    }
+//    @PostMapping("/node/answer")
+//    public ResponseEntity<String> postAnswer(@RequestBody Answer answer) {
+//        intervuService.storeFeedback(answer);
+//        return new ResponseEntity<>("Answer received and feedback stored", HttpStatus.OK);
+//    }
 
 //    @PostMapping("/node/feedback")
 //    public ResponseEntity<String> getFeedback(@RequestBody String phrase) {

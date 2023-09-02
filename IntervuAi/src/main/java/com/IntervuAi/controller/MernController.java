@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.IntervuAi.Service.IntervuService;
+import com.IntervuAi.Service.IntervuServiceImpl;
 @RestController
 @RequestMapping("/bot")
 @CrossOrigin("*")
 public class MernController {
 	@Autowired
-	private IntervuService botService;
+	private IntervuServiceImpl botService;
 	String promptes="I want you to act as an interviewer. I will be the candidate and you will ask me the interview questions for the position of Mern Developer.\r\n"
 			+ "That will require me to have the following content\r\n"
 			+ "```\r\n"
