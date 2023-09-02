@@ -50,7 +50,7 @@ public class JavaController {
 	 @PostMapping("/answer")
 	 public ResponseEntity<String> checkAnswer(@RequestBody Answer answer){
 		intervuService.storeFeedback(answer);
-		 return null;
+		 return new ResponseEntity<String>("Next Question",HttpStatus.OK);
 	 }
 	 
 	 
