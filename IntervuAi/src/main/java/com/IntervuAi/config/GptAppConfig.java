@@ -7,10 +7,12 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 
 @Configuration
-public class AppGptConfig {
+public class GptAppConfig {
 
 	@Value("${openai.api.key}")
 	private String key;
+	
+	
 	@Bean
 	public RestTemplate templete() {
 		RestTemplate restTemplate = new RestTemplate();

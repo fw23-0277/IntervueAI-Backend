@@ -30,15 +30,11 @@ public class AuthController {
 
 	@PostMapping("/signup")
 	public ResponseEntity<AuthResponse> createUserHandler(@RequestBody User user) throws UserException {
-		System.out.println("oKKKKKKKKKKKKKKKKKKK");
-		System.out.println(user);
 		return new ResponseEntity<AuthResponse>(userService.createUser(user), HttpStatus.CREATED);
 	}
 
 	@PostMapping("/signin")
-	
 	public ResponseEntity<AuthResponse> loginUserHandler(@RequestBody LoginRequest logingRequest) {
-		System.out.println();
 		return new ResponseEntity<AuthResponse>(userService.userLogin(logingRequest), HttpStatus.OK);
 	}
 }
